@@ -1,0 +1,2 @@
+* text eol=crlf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+LICENSE.txt text whitespace=-tab-in-indent
