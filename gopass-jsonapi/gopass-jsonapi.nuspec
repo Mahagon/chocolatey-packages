@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>gopass-jsonapi</id>
+    <version>1.14.11</version>
+    <packageSourceUrl>https://github.com/Mahagon/chocolatey-packages</packageSourceUrl>
+    <owners>Mahagon</owners>
+    <!-- ============================== -->
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>gopass-jsonapi (Install)</title>
+    <authors>dominikschulz</authors>
+    <projectUrl>https://github.com/gopasspw/gopass-jsonapi</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/gopasspw/gopass/master/docs/logo.png</iconUrl>
+    <copyright>2012-2022 Scott Chacon and others</copyright>
+    <licenseUrl>https://github.com/gopasspw/gopass-jsonapi/blob/9a90ed28940881d0155605dda7334e39b314c87b/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/gopasspw/gopass-jsonapi</projectSourceUrl>
+    <docsUrl>https://github.com/gopasspw/gopass-jsonapi/tree/master/docs</docsUrl>
+    <bugTrackerUrl>https://github.com/gopasspw/gopass-jsonapi/issues</bugTrackerUrl>
+    <tags>gopass-jsonapi gopass cli</tags>
+    <summary>Communicate with gopass via json.</summary>
+    <description>The gopass-jsonapi is in particular useful for browser plugins like [gopassbridge](https://github.com/gopasspw/gopassbridge).</description>
+    <releaseNotes>https://github.com/gopasspw/gopass-jsonapi/releases</releaseNotes>
+    <!-- =============================== -->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
