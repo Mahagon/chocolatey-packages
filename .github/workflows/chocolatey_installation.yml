@@ -1,17 +1,17 @@
 name: Chocolatey installation test
-run-name: ${{ github.actor }} is testing the chocolatey installation of gopass 🚀
+run-name: ${{ github.actor }} is testing the chocolatey installation of gopass-jsonapi 🚀
 
 on:
   push:
     branches:
       - 'main'
     paths:
-      - gopass-jsonapi
+      - gopass-jsonapi/**
   pull_request:
     branches:
       - 'main'
     paths:
-      - gopass-jsonapi
+      - gopass-jsonapi/**
 
 jobs:
   choco_install_verification:
