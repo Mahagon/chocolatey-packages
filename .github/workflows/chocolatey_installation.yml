@@ -7,11 +7,13 @@ on:
       - 'main'
     paths:
       - gopass-jsonapi/**
+      - .github/workflows/chocolatey_installation.yml
   pull_request:
     branches:
       - 'main'
     paths:
       - gopass-jsonapi/**
+      - .github/workflows/chocolatey_installation.yml
 
 jobs:
   choco_install_verification:
