@@ -17,7 +17,7 @@
     <licenseUrl>https://github.com/gopasspw/gopass-jsonapi/blob/9a90ed28940881d0155605dda7334e39b314c87b/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/gopasspw/gopass-jsonapi</projectSourceUrl>
-    <docsUrl>https://github.com/gopasspw/gopass-jsonapi/tree/master/docs</docsUrl>
+    <docsUrl>https://github.com/gopasspw/gopass-jsonapi/blob/master/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/gopasspw/gopass-jsonapi/issues</bugTrackerUrl>
     <tags>gopass-jsonapi gopass cli</tags>
     <summary>Communicate with gopass via json.</summary>
