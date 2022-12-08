@@ -11,7 +11,7 @@
     <!-- This section is about the software itself -->
     <title>gopass-jsonapi (Install)</title>
     <authors>dominikschulz</authors>
-    <projectUrl>https://github.com/gopasspw/gopass-jsonapi</projectUrl>
+    <projectUrl>https://www.gopass.pw/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/gopasspw/gopass/master/docs/logo.png</iconUrl>
     <copyright>2012-2022 Scott Chacon and others</copyright>
     <licenseUrl>https://github.com/gopasspw/gopass-jsonapi/blob/9a90ed28940881d0155605dda7334e39b314c87b/LICENSE</licenseUrl>
