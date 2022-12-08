@@ -1,0 +1,45 @@
+name: Chocolatey Push
+
+on:
+  workflow_dispatch:
+    inputs:
+      choco_package:
+        description: 'Package to push'
+        required: true
+      choco_version:
+        description: 'Version to Push'
+        required: true
+
+
+run-name: ${{ github.actor }} is pushing ${{ inputs.choco_package }} ${{ inputs.choco_version }} 🚀
+
+jobs:
+  choco_install_verification:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Add mask
+        run: |
+          echo "::add-mask::${{ secrets.CHOCOLATEY_API_KEY }}"
+      - name: Choco install ${{ inputs.choco_package }} ${{ inputs.choco_version }}
+        uses: crazy-max/ghaction-chocolatey@v2
+        with:
+          args: install ${{ inputs.choco_package }}\${{ inputs.choco_package }}.nuspec --no-progress --pre
+      - name: Choco pack ${{ inputs.choco_package }} ${{ inputs.choco_version }}
+        uses: crazy-max/ghaction-chocolatey@v2
+        with:
+          args: >-
+            pack ${{ inputs.choco_package }}\${{ inputs.choco_package }}.nuspec
+            --out ${{ inputs.choco_package }}
+      - name: Choco push ${{ inputs.choco_package }} ${{ inputs.choco_version }}
+        uses: crazy-max/ghaction-chocolatey@v2
+        with:
+          args: >-
+            push ${{ inputs.choco_package }}\${{ inputs.choco_package }}.${{ inputs.choco_version }}.nupkg
+            --source https://push.chocolatey.org/
+            --api-key ${{ secrets.CHOCOLATEY_API_KEY }}
