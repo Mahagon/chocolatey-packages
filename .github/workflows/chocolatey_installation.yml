@@ -23,10 +23,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Choco pack gopass-jsonapi
-        uses: crazy-max/ghaction-chocolatey@v2
-        with:
-          args: pack gopass-jsonapi\gopass-jsonapi.nuspec
       - name: Choco install gopass-jsonapi
         uses: crazy-max/ghaction-chocolatey@v2
         with:
