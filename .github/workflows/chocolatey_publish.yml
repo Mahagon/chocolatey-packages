@@ -43,3 +43,5 @@ jobs:
             push ${{ inputs.choco_package }}\${{ inputs.choco_package }}.${{ inputs.choco_version }}.nupkg
             --source https://push.chocolatey.org/
             --api-key ${{ secrets.CHOCOLATEY_API_KEY }}
+            --acceptlicense
+            --verbose
