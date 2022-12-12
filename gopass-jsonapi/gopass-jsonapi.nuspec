@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>gopass-jsonapi</id>
-    <version>1.15.0</version>
+    <version>1.15.1</version>
     <packageSourceUrl>https://github.com/Mahagon/chocolatey-packages</packageSourceUrl>
     <owners>Mahagon</owners>
     <!-- ============================== -->
@@ -21,7 +21,13 @@
     <bugTrackerUrl>https://github.com/gopasspw/gopass-jsonapi/issues</bugTrackerUrl>
     <tags>gopass-jsonapi gopass cli</tags>
     <summary>Communicate with gopass via json.</summary>
-    <description>The gopass-jsonapi is in particular useful for browser plugins like [gopassbridge](https://github.com/gopasspw/gopassbridge).</description>
+    <description>
+The gopass-jsonapi is in particular useful for browser plugins like [gopassbridge](https://github.com/gopasspw/gopassbridge).
+
+## Package Parameters
+
+- `/Browser` - Defines the [browser](https://github.com/gopasspw/gopass-jsonapi#supported-browsers) for the gopass-jsonapi. (Defaults to `chrome`)
+    </description>
     <releaseNotes>https://github.com/gopasspw/gopass-jsonapi/releases</releaseNotes>
     <!-- =============================== -->
   </metadata>
