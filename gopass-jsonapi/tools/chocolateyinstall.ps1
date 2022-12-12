@@ -5,7 +5,7 @@ $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url64      = 'https://github.com/gopasspw/gopass-jsonapi/releases/download/v1.15.1/gopass-jsonapi-1.15.1-windows-amd64.zip'
 $packageParameters = Get-PackageParameters
 
-if (!$packageParameters['BROWSERS']) { $packageParameters['BROWSERS'] = 'chrome' }
+if (!$packageParameters['Browser']) { $packageParameters['Browser'] = 'chrome' }
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
@@ -38,7 +38,7 @@ $configArgs = @{
     "`"$(Join-Path @gopassJsonapiPath)`""
     'configure'
     '--browser'
-    "`"$($packageParameters['BROWSERS'])`""
+    "`"$($packageParameters['Browser'])`""
     '--path'
     "`"$(Join-Path @gopassProgramdataFolder)`""
     "--global"
