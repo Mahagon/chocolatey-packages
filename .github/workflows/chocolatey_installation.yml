@@ -29,6 +29,12 @@ jobs:
         uses: crazy-max/ghaction-chocolatey@v2
         with:
           args: install googlechrome --no-progress
+      - name: Choco install gopass
+        uses: crazy-max/ghaction-chocolatey@v2
+        with:
+          args: install gopass --no-progress
+      - name: Run gopass setup
+        run: gopass setup --crypto plain --storage fs
       - name: Choco install gopass-jsonapi
         uses: crazy-max/ghaction-chocolatey@v2
         with:
