@@ -1,4 +1,4 @@
-﻿
+
 $ErrorActionPreference = 'Stop'
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
@@ -29,8 +29,8 @@ $gopassProgramdataFolder = @{
 }
 
 $configArgs = @{
-  filePath     = "cmd.exe"
-  argumentList = @(
+  exeToRun       = $env:ComSpec
+  statements     = @(
     '/c'
     'echo'
     'Y'
@@ -45,4 +45,4 @@ $configArgs = @{
   )
 }
 
-Start-Process @configArgs
+Start-ChocolateyProcessAsAdmin @configArgs
