@@ -6,6 +6,7 @@ $url64      = 'https://github.com/gopasspw/gopass-jsonapi/releases/download/v1.1
 $packageParameters = Get-PackageParameters
 
 if (!$packageParameters['Browser']) { $packageParameters['Browser'] = 'chrome' }
+if (!$packageParameters['Configure']) { $packageParameters['Configure'] = 'false' }
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
@@ -45,4 +46,6 @@ $configArgs = @{
   )
 }
 
-Start-ChocolateyProcessAsAdmin @configArgs
+if ($packageParameters['Configure'] -ieq 'true') {
+  Start-ChocolateyProcessAsAdmin @configArgs
+}

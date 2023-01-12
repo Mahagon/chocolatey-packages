@@ -16,7 +16,7 @@ on:
       - .github/workflows/chocolatey_installation.yml
 
 jobs:
-  choco_install_verification:
+  choco_install_with_config:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -35,6 +35,25 @@ jobs:
           args: install gopass --no-progress
       - name: Run gopass setup
         run: gopass setup --crypto plain --storage fs
+      - name: Choco install gopass-jsonapi
+        uses: crazy-max/ghaction-chocolatey@v2
+        with:
+          args: install gopass-jsonapi\gopass-jsonapi.nuspec --no-progress --pre --params "'/Configure:true'"
+      - name: Upload choco logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v1
+        with:
+          name: choco-logs
+          path: 'C:\ProgramData\chocolatey\logs\chocolatey.log'
+  choco_install:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Choco install gopass-jsonapi
         uses: crazy-max/ghaction-chocolatey@v2
         with:

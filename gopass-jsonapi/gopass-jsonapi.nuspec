@@ -26,7 +26,14 @@ The gopass-jsonapi is in particular useful for browser plugins like [gopassbridg
 
 ## Package Parameters
 
-- `/Browser` - Defines the [browser](https://github.com/gopasspw/gopass-jsonapi#supported-browsers) for the gopass-jsonapi. (Defaults to `chrome`)
+- `/Configure:false`
+  - Gopass must be configured beforehand
+  - Configure gopass-jsonapi for all users
+  - Defaults to `false`
+- `/Browser:chrome`
+  - Defines the [browser](https://github.com/gopasspw/gopass-jsonapi#supported-browsers) for the gopass-jsonapi
+  - Defaults to `chrome`
+  - Skipped if Configure is set to `false`
     </description>
     <releaseNotes>https://github.com/gopasspw/gopass-jsonapi/releases</releaseNotes>
     <!-- =============================== -->
