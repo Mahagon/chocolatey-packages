@@ -33,3 +33,9 @@ jobs:
         uses: crazy-max/ghaction-chocolatey@v2
         with:
           args: install gopass-jsonapi\gopass-jsonapi.nuspec --no-progress --pre
+      - name: Upload choco logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v1
+        with:
+          name: choco-logs
+          path: 'C:\ProgramData\chocolatey\logs\chocolatey.log'
