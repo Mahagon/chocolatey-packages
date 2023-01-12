@@ -25,6 +25,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Choco install chrome
+        uses: crazy-max/ghaction-chocolatey@v2
+        with:
+          args: install chrome --no-progress
       - name: Choco install gopass-jsonapi
         uses: crazy-max/ghaction-chocolatey@v2
         with:
