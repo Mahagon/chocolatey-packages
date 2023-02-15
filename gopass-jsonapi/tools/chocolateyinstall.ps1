@@ -2,7 +2,7 @@
 $ErrorActionPreference = 'Stop'
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64      = 'https://github.com/gopasspw/gopass-jsonapi/releases/download/v1.15.3/gopass-jsonapi-1.15.3-windows-amd64.zip'
+$url64      = 'https://github.com/gopasspw/gopass-jsonapi/releases/download/v1.15.4/gopass-jsonapi-1.15.4-windows-amd64.zip'
 $packageParameters = Get-PackageParameters
 
 if (!$packageParameters['Browser']) { $packageParameters['Browser'] = 'chrome' }
@@ -13,7 +13,7 @@ $packageArgs = @{
   unzipLocation  = $toolsDir
   url64bit       = $url64
   softwareName   = 'gopass-jsonapi*'
-  checksum64     = '71b5b288686a3f72fa17b92026ae69052f57e7288c728df0e6645688e7299b09'
+  checksum64     = '0c36991721b04092b777ee3c2e181f11219a487d781971c09d0f9dc0b5b96a50'
   checksumType64 = 'sha256'
 }
 
