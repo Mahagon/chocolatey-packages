@@ -28,7 +28,7 @@ jobs:
       - name: Choco install googlechrome
         uses: crazy-max/ghaction-chocolatey@v2
         with:
-          args: install googlechrome --no-progress
+          args: install googlechrome --no-progress -ignore-checksums -y
       - name: Choco install gopass
         uses: crazy-max/ghaction-chocolatey@v2
         with:
