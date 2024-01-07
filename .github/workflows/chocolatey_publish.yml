@@ -27,13 +27,13 @@ jobs:
         run: |
           echo "::add-mask::${{ secrets.CHOCOLATEY_API_KEY }}"
       - name: Choco pack ${{ inputs.choco_package }} ${{ inputs.choco_version }}
-        uses: crazy-max/ghaction-chocolatey@v2
+        uses: crazy-max/ghaction-chocolatey@v3
         with:
           args: >-
             pack ${{ inputs.choco_package }}\${{ inputs.choco_package }}.nuspec
             --out ${{ inputs.choco_package }}
       - name: Choco push ${{ inputs.choco_package }} ${{ inputs.choco_version }}
-        uses: crazy-max/ghaction-chocolatey@v2
+        uses: crazy-max/ghaction-chocolatey@v3
         with:
           args: >-
             push ${{ inputs.choco_package }}\${{ inputs.choco_package }}.${{ inputs.choco_version }}.nupkg

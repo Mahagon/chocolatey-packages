@@ -26,19 +26,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Choco install googlechrome
-        uses: crazy-max/ghaction-chocolatey@v2
+        uses: crazy-max/ghaction-chocolatey@v3
         with:
           args: install googlechrome --no-progress -ignore-checksums -y
       - name: Choco install gopass
-        uses: crazy-max/ghaction-chocolatey@v2
+        uses: crazy-max/ghaction-chocolatey@v3
         with:
           args: install gopass --no-progress
       - name: Run gopass setup
         run: gopass setup --crypto plain --storage fs
       - name: Choco install gopass-jsonapi
-        uses: crazy-max/ghaction-chocolatey@v2
+        uses: crazy-max/ghaction-chocolatey@v3
         with:
-          args: install gopass-jsonapi --source=".\" --params "'/Configure:true'"
+          args: install gopass-jsonapi --source=gopass-jsonapi --params "'/Configure:true'" --no-progress --pre
       - name: Upload choco logs on failure
         if: failure()
         uses: actions/upload-artifact@v1
@@ -55,9 +55,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Choco install gopass-jsonapi
-        uses: crazy-max/ghaction-chocolatey@v2
+        uses: crazy-max/ghaction-chocolatey@v3
         with:
-          args: install gopass-jsonapi --source=".\"
+          args: install gopass-jsonapi --source=gopass-jsonapi --no-progress --pre
       - name: Upload choco logs on failure
         if: failure()
         uses: actions/upload-artifact@v1
